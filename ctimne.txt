@@ -27,3 +27,14 @@ checkout:     a38a7d3e2f8b509b00e1ff594668a13108af914d 2022-01-14 09:02:41 UTC
 tags:         trunk
 comment:      initial empty check-in (user: fossil)
 check-ins:    1
+
+
+
+gitlab a Github
+git remote add github https://asida@github.com/asida/atom-language-m-lang.git
+git push --mirror github
+
+#github rady (po zalozeni repo):
+git remote add origin https://github.com/asida/atom-language-m-lang.git
+git branch -M main
+git push -u origin main
