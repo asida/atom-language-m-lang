@@ -1,0 +1,29 @@
+/fossils # fossil init atom-language-m-lang.fossil
+project-id: 76350d292c774b99b372297531cc46e1f45dd7a6
+server-id:  78e8edb607211b80fde85b7c1d2e6d7cb6b69841
+admin-user: fossil (initial password is "Qfwt9AuiDB")
+/fossils # fossil settings ignore-glob "*/.git,*/.gitignore,*/.gitattributes,ctimne.txt" -R atom-language-m-lang.fossil
+/fossils # fossil sql "REPLACE INTO config VALUES('project-name','atom-language-m-lang', (select mtime from config where
+ name = 'project-code') );" -R atom-language-m-lang.fossil
+/fossils # fossil login-group join start.fossil --name prod@awport.pro -R atom-language-m-lang.fossil
+Now part of login-group "prod@awport.pro" with:
+  start
+  30d6b1ff0f094896a789a74e509b7bf107bf912a
+  m-websvr
+/fossils # fossil config pull -R atom-language-m-lang.fossil user start.fossil
+Round-trips: 1   Artifacts sent: 0  received: 1
+Pull done, wire bytes sent: 250  received: 418  ip:
+/fossils # cd atom-language-m-lang/
+/fossils/atom-language-m-lang # fossil open ../atom-language-m-lang.fossil
+directory /fossils/atom-language-m-lang is not empty
+use the -f or --force option to override
+/fossils/atom-language-m-lang # fossil open -f ../atom-language-m-lang.fossil
+project-name: atom-language-m-lang
+repository:   /fossils/atom-language-m-lang.fossil
+local-root:   /fossils/atom-language-m-lang/
+config-db:    /root/.fossil
+project-code: 76350d292c774b99b372297531cc46e1f45dd7a6
+checkout:     a38a7d3e2f8b509b00e1ff594668a13108af914d 2022-01-14 09:02:41 UTC
+tags:         trunk
+comment:      initial empty check-in (user: fossil)
+check-ins:    1

@@ -1,0 +1,73 @@
+fileTypes: [
+  "rsa","m"
+]
+name: "MUMPS"
+patterns: [
+  {
+    match: "^[%A-Za-z][A-Za-z0-9]*"
+    name: "entity.name.function"
+  }
+  {
+    comment: "uses positive look behind (leading space) and positive look ahead (space, :, or $)"
+    match: "(?<=\\s)(?i:[BCDEFGHIJKLMNOQRSUVWX])(?=(:|\\s|$))"
+    name: "keyword.mumps.short"
+  }
+  {
+    match: "(?<=\\s)(?i:BREAK|CLOSE|DO|ELSE|FOR|GOTO|HALT|HANG|IF|JOB|KILL|LOCK|MERGE|NEW|OPEN|QUIT|READ|SET|USE|VIEW|WRITE|XECUTE)(?=(:|\\s|$))"
+    name: "keyword.mumps"
+  }
+  {
+    match: "(?<=\\s)(?i:CATCH|CONTINUE|ELSEIF|TCOMMIT|THROW|TROLLBACK|TRY|TSTART|WHILE)(?=(:|\\s|$))"
+    name: "keyword.mumps.cache"
+  }
+  {
+    begin: "\""
+    end: "\""
+    name: "string.quoted.double"
+  }
+  {
+    match: ";.*"
+    name: "comment.line.mumps"
+  }
+  {
+    match: "\\b([0-9]+)\\b"
+    name: "constant.numeric"
+  }
+  {
+    match: "[-+*<>=_?!@#&*,():|\\\\'\\[\\]]"
+    name: "keyword.operator"
+  }
+  {
+    comment: "uses negative look behind (don't match $$) and positive look ahead (match \"(\" )"
+    match: "(?<!\\$)\\$(?i:ASCII|A|CHAR|C|DATA|D|EXTRACT|E|FIND|F|FNUMBER|FN|GET|G|JUSTIFY|J|LENGTH|L|NAME|NA|NEXT|N|ORDER|O|PIECE|P|QLENGTH|QL|QSUBSCRIPT|QS|QUERY|Q|RANDOM|R|REVERSE|RE|SELECT|S|STACK|ST|TEXT|T|TRANSLATE|TR|VIEW|V)(?=\\()"
+    name: "support.function.mumps"
+  }
+  {
+    match: "(?<!\\$)\\$(?i:ZABS|ZARCCOS|ZARCSIN|ZARCTAN|ZCOS|ZCOT|ZCSC|ZDATE|ZD|ZDATEH|ZDH|ZDATETIME|ZDT|ZDATETIMEH|ZDTH|ZEXP|ZHEX|ZH|ZLN|ZLOG|ZPOWER|ZSEC|ZSIN|ZSQR|ZTAN|ZTIME|ZT|ZTIMEH|ZTH|ZUTIL|ZU|ZF|ZPREVIOUS|ZP)(?=\\()"
+    name: "support.function.z"
+  }
+  {
+    match: "(?<!\\$)\\$(?i:BIT|BITCOUNT|BITFIND|BITLOGIC|CASE|CLASSMETHOD|CLASSNAME|DECIMAL|DOUBLE|FACTOR|INCREMENT|I|INUMBER|ISOBJECT|ISVALIDDOUBLE|ISVALIDNUM|LIST|LI|LISTBUILD|LB|LISTDATA|LD|LISTFIND|LF|LISTFROMSTRING|LFS|LISTGET|LG|LISTLENGTH|LL|LISTNEXT|LISTSAME|LS|LISTTOSTRING|LTS|LISTVALID|LV|LOCATE|MATCH|METHOD|NCONVERT|NC|NORMALIZE|NOW|NUMBER|NUM|PARAMETER|PREFETCHOFF|PREFETCHON|PROPERTY|REPLACE|SCONVERT|SC|SORTBEGIN|SORTEND|WASCII|WA|WCHAR|WC|WEXTRACT|WE|WFIND|WF|WISWIDE|WLENGTH|WL|WREVERSE|WRE|XECUTE)(?=\\()"
+    name: "support.function.cache"
+  }
+  {
+    comment: "uses negative look behind (don't match $$) and negative look ahead (don't match \"(\" )"
+    match: "(?<!\\$)\\$(?i:DEVICE|ECODE|EC|ESTACK|ES|ETRAP|ET|HALT|HOROLOG|H|IO|I|JOB|J|KEY|K|NAMESPACE|PRINCIPAL|P|QUIT|Q|ROLES|STACK|ST|STORAGE|S|SYSTEM|TEST|T|THIS|TLEVEL|TL|USERNAME|X|Y)\\b"
+    name: "variable.language.special"
+  }
+  {
+    match: "(?<!\\$)\\$[Zz](?i:A|B|CHILD|C|EOF|ERROR|E|HOROLOG|H|IO|I|JOB|J|MODE|M|NAME|N|NSPACE|ORDER|O|PARENT|P|PI|POS|REFERENCE|R|STORAGE|S|TIMESTAMP|TS|TIMEZONE|TZ|TRAP|T|VERSION|V)\\b"
+    name: "variable.language.special.z"
+  }
+  {
+    comment: "$$func or $$func^routine"
+    match: "\\$\\$([%A-Za-z][A-Za-z0-9]*)(\\^[%A-Za-z][A-Za-z0-9]*)?"
+    name: "support.function.user"
+  }
+  {
+    comment: "$$^routine"
+    match: "\\$\\$\\^([%A-Za-z][A-Za-z0-9]*)"
+    name: "support.function.user"
+  }
+]
+scopeName: "source.mumps"

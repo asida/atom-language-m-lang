@@ -1,0 +1,14 @@
+{
+  "name": "atom-language-m-lang",
+  "version": "0.0.0",
+  "description": "converted using apm init --package atom-m-lang --convert https://github.com/ksherlock/MUMPS.tmbundle",
+  "keywords": [
+    "language",
+    "grammar"
+  ],
+  "repository": "https://github.com/atom-language-m-lang",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
