@@ -6,7 +6,7 @@
     "language",
     "grammar"
   ],
-  "repository": "https://github.com/atom-language-m-lang",
+  "repository": "https://gitlab.com/asida/atom-language-m-lang",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
